@@ -5,10 +5,10 @@ package planes.enums;
  */
 public enum EngineType {
     /*
-    JET         -   реактивный
-    HELIX       -   винтовой
-    TURBOJET    -   турбореактивный
-    TURBOPROP   -   турбовинтовой
+    JET         -   СЂРµР°РєС‚РёРІРЅС‹Р№
+    HELIX       -   РІРёРЅС‚РѕРІРѕР№
+    TURBOJET    -   С‚СѓСЂР±РѕСЂРµР°РєС‚РёРІРЅС‹Р№
+    TURBOPROP   -   С‚СѓСЂР±РѕРІРёРЅС‚РѕРІРѕР№
      */
     JET, HELIX, TURBOJET, TURBOPROP;
 }

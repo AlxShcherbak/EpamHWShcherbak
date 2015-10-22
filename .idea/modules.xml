@@ -3,8 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/homeWorkShcherbak.iml" filepath="$PROJECT_DIR$/homeWorkShcherbak.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson1Task/lesson1Task.iml" filepath="$PROJECT_DIR$/lesson1Task/lesson1Task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson3Task/lesson3Task.iml" filepath="$PROJECT_DIR$/lesson3Task/lesson3Task.iml" />
       <module fileurl="file://$PROJECT_DIR$/probleml1/probleml1.iml" filepath="$PROJECT_DIR$/probleml1/probleml1.iml" />
       <module fileurl="file://$PROJECT_DIR$/probleml2/probleml2.iml" filepath="$PROJECT_DIR$/probleml2/probleml2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/task1OOP/task1OOP.iml" filepath="$PROJECT_DIR$/task1OOP/task1OOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/task2String/task2String.iml" filepath="$PROJECT_DIR$/task2String/task2String.iml" />
+      <module fileurl="file://$PROJECT_DIR$/task3XML/task3XML.iml" filepath="$PROJECT_DIR$/task3XML/task3XML.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tests/tests.iml" filepath="$PROJECT_DIR$/tests/tests.iml" />
     </modules>
   </component>
 </project>

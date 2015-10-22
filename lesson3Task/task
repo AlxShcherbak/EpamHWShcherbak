@@ -1,0 +1,5 @@
+Создать множество classes.SomeSet на базе массива и списка:
+    -   MyArray
+    -   MyArrayList
+    -   MyLinkedList (Single)   - void reverse()!!!!
+    -   MyLinkedList (Double)   - reverse() !!!!
