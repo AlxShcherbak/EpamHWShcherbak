@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
-    <file url="file://$PROJECT_DIR$/lesson3Task/src/classes/MyArray.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/lesson3Task/src/classes/MyArrayList.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/probleml2/src/planes/enums/EngineType.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/probleml2/src/planes/task" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/probleml2/src/shapes/task" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lessonsTasks/lesson3Task/src/classes/MyArray.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lessonsTasks/lesson3Task/src/classes/MyArrayList.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/problems/probleml2/src/planes/enums/EngineType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/problems/probleml2/src/planes/task" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/problems/probleml2/src/shapes/task" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
