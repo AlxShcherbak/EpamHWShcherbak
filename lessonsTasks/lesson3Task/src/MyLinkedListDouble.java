@@ -1,5 +1,3 @@
-package classes;
-
 import com.sun.istack.internal.Nullable;
 
 /**
@@ -27,7 +25,9 @@ public class MyLinkedListDouble<E> implements MyList<E>, Container<E> {
     @Deprecated
     @Override
     public MyLinkedListDouble<E> clone() {
-        return this;
+        MyLinkedListDouble<E> clone = new MyLinkedListDouble<>();
+        clone.addAll(this.toArray());
+        return clone;
     }
 
     @Override
@@ -190,7 +190,16 @@ public class MyLinkedListDouble<E> implements MyList<E>, Container<E> {
 
     @Override
     public int indexOf(E element) {
-        return 0;
+        if (!this.isEmpty()) {
+            Element elementCounter = first;
+            for (int i = 0; i < size(); i++) {
+                if (elementCounter.getValue().equals(element)) {
+                    return i;
+                }
+                elementCounter = elementCounter.next();
+            }
+        }
+        return -1;
     }
 
     @Override
@@ -199,8 +208,19 @@ public class MyLinkedListDouble<E> implements MyList<E>, Container<E> {
     }
 
     @Override
+    @Nullable
     public E[] toArray() {
-        return null;
+        if (!this.isEmpty()) {
+            E[] array = (E[]) (new Object[size()]);
+            Element<E> elementCounter = first;
+            for (int i = 0; i < size(); i++) {
+                array[i] = elementCounter.getValue();
+                if (elementCounter.hasNext()) {
+                    elementCounter = elementCounter.next();
+                }
+            }
+            return array;
+        } else return null;
     }
 
     @Override
@@ -214,6 +234,18 @@ public class MyLinkedListDouble<E> implements MyList<E>, Container<E> {
 
     @Override
     public boolean contains(E element) {
+        if (!this.isEmpty()) {
+            Element<E> elementCounter = first;
+            for (int i = 0; i < size(); i++) {
+                if (elementCounter.getValue().equals(element)) {
+                    return true;
+                } else {
+                    if (elementCounter.hasNext()) {
+                        elementCounter = elementCounter.next();
+                    }
+                }
+            }
+        }
         return false;
     }
 
@@ -233,7 +265,7 @@ public class MyLinkedListDouble<E> implements MyList<E>, Container<E> {
         return null;
     }
 
-    protected class Element<E> {
+    protected static class Element<E> {
         private Element next;
         private Element prev;
         E value;
@@ -248,7 +280,9 @@ public class MyLinkedListDouble<E> implements MyList<E>, Container<E> {
         }
 
         boolean hasNext() {
-            return false;
+            if (next() != null) {
+                return true;
+            } else return false;
         }
 
         Element next() {

@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.Arrays;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -214,7 +216,15 @@ public class MyArrayListTest {
 
     @org.junit.Test
     public void testIndexOf() throws Exception {
+        MyArrayList<Integer> testList = new MyArrayList<>();
+        Integer[] arrayInput = {0, 1, 2, 3, 4, 5, 6, 7, 8};
+        testList.addAll(arrayInput);
 
+        assertEquals(testList.indexOf(0), 0);
+        assertEquals(testList.indexOf(4), 4);
+        assertEquals(testList.indexOf(8), 8);
+        assertEquals(testList.indexOf(-5), -1);
+        assertEquals(testList.indexOf(10), -1);
     }
 
     @org.junit.Test
@@ -232,7 +242,11 @@ public class MyArrayListTest {
 
     @org.junit.Test
     public void testToArray() throws Exception {
+        MyArrayList<Integer> testList = new MyArrayList<>();
+        Integer[] arrayInput = {0, 1, 2, 3, 4, 5, 6, 7, 8};
+        testList.addAll(arrayInput);
 
+        assertTrue(Arrays.deepEquals(testList.toArray(), arrayInput));
     }
 
     @org.junit.Test
@@ -251,6 +265,15 @@ public class MyArrayListTest {
 
     @org.junit.Test
     public void testContains() throws Exception {
+        MyArrayList<Integer> testList = new MyArrayList<>();
+        Integer[] arrayInput = {0, 1, 2, 3, 4, 5, 6, 7, 8};
+        testList.addAll(arrayInput);
 
+        assertTrue(testList.contains(0));
+        assertTrue(testList.contains(4));
+        assertTrue(testList.contains(8));
+
+        assertFalse(testList.contains(-9));
+        assertFalse(testList.contains(20));
     }
 }

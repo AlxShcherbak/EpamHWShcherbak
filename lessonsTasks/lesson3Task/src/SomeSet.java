@@ -1,7 +1,3 @@
-package classes;
-
-import java.util.Set;
-
 /**
  * Created by AlxEx on 22.10.2015.
  */

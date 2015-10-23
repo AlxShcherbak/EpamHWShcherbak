@@ -15,6 +15,15 @@ public class Main {
 
 
         System.arraycopy(array, 4, array, 3, 3);
+
+        int al = 65,
+                iter = 0;
+
+        while (al > 0) {
+            al = al >> 4;
+            iter ++;
+        }
+
         System.out.println(arrayB);
     }
 }

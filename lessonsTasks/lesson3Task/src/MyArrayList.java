@@ -1,5 +1,3 @@
-package classes;
-
 import java.util.Arrays;
 import java.util.RandomAccess;
 
@@ -148,7 +146,7 @@ public class MyArrayList<E> implements MyList<E>, Container<E>, RandomAccess {
 
     @Override
     public E[] toArray() {
-        return array.clone();
+        return Arrays.copyOf(array,size());
     }
 
     @Override

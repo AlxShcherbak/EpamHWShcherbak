@@ -82,20 +82,56 @@ public class Probleml1 {
     }
 
     public Integer karatsubaMultiplication(Integer inputValueFist, Integer inputValueSec) {
-        if (inputValueFist < 10 || inputValueSec < 10) {
-            return inputValueFist * inputValueSec;
+        int sign = 1;
+        if ((inputValueFist < 0 && inputValueSec > 0) || (inputValueSec < 0 && inputValueFist > 0)) {
+            sign = -1;
+        }
+
+        int inpVF = Math.abs(inputValueFist.intValue()),
+                inpVS = Math.abs(inputValueSec.intValue());
+
+        /*
+        if (inpVF < 10 || inpVS < 10) {
+            return inpVF * inpVS;
         } else {
             int base = 10;
-            int exp = Math.min((int) Math.log10(inputValueFist), (int) Math.log10(inputValueSec)),  // inpF = 56112, inpS = 126 -> exp = 2
+            int exp = Math.min((int) Math.log10(inpVF), (int) Math.log10(inpVS)),  // inpF = 56112, inpS = 126 -> exp = 2
                     basePowExp = (int) Math.pow(base, exp),     // exp = 2 -> basePowExp = 10^2 = 100
-                    expBaseFirst = inputValueFist / basePowExp, // expBaseF = 561
-                    expBaseSec = inputValueSec / basePowExp,    // expBaseS = 1
-                    expResFirst = inputValueFist % basePowExp,  // expResF = 12
-                    expRestSec = inputValueSec % basePowExp;    // expResS = 26
+                    expBaseFirst = inpVF / basePowExp, // expBaseF = 561
+                    expBaseSec = inpVS / basePowExp,    // expBaseS = 1
+                    expResFirst = inpVF % basePowExp,  // expResF = 12
+                    expRestSec = inpVS % basePowExp;    // expResS = 26
             int z2 = expBaseFirst * expBaseSec, // z2 = 561 * 1 = 561
                     z0 = karatsubaMultiplication(expResFirst, expRestSec),    // z0 = 12 * 26 = 312  !! recursive
-                    z1 = karatsubaMultiplication(expBaseFirst + expResFirst, expBaseSec + expRestSec) -  z2 - z0; // z1 = 14598  !!recursive
-            return (int) (z2 * Math.pow(10, 2 * exp) + z1 * Math.pow(10, exp) + z0);    // return inpF * inpS = 7070112
+                    z1 = karatsubaMultiplication(expBaseFirst + expResFirst, expBaseSec + expRestSec) - z2 - z0; // z1 = 14598  !!recursive
+            return (int) (sign * (z2 * Math.pow(10, 2 * exp) + z1 * Math.pow(10, exp) + z0));    // return inpF * inpS = 7070112
+         */
+
+
+        if (inpVF < 16 || inpVS < 16) {
+            return inpVF * inpVS;
+        } else {
+            int inpVFBin = inpVF,
+                    inpVSBin = inpVS;
+            int base = 16,
+                    exp = 0;
+
+            while (inpVFBin > 0 & inpVSBin > 0) {
+                exp++;
+                inpVFBin = inpVFBin >> 4;
+                inpVSBin = inpVSBin >> 4;
+            }
+            exp--;
+
+            int basePowExp = 1 << (exp * 4),
+                    expBaseFirst = inpVF / basePowExp,
+                    expBaseSec = inpVS / basePowExp,
+                    expResFirst = inpVF % basePowExp,
+                    expRestSec = inpVS % basePowExp;
+            int z2 = expBaseFirst * expBaseSec,
+                    z0 = karatsubaMultiplication(expResFirst, expRestSec),
+                    z1 = karatsubaMultiplication(expBaseFirst + expResFirst, expBaseSec + expRestSec) - z2 - z0;
+            return (int) (sign * (z2 * (1 << (exp * 4 * 2)) + z1 * (1 << (exp * 4)) + z0));
         }
     }
 
