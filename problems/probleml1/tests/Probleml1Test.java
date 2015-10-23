@@ -1,3 +1,5 @@
+import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 /**
@@ -35,5 +37,13 @@ public class Probleml1Test {
 
         assertEquals(Integer.toBinaryString(new Probleml1().changeBitTo(5, 0, intValue)), "1101000"); // 0b1101000
         assertEquals(Integer.toBinaryString(new Probleml1().changeBitTo(5, 1, intValue)), "1111000"); // 0b1111000
+    }
+
+    @Test
+    public void testKaratsubaMultiplication() throws Exception {
+        Integer first = 56112,
+                sec = 126;
+
+        assertEquals(new Probleml1().karatsubaMultiplication(first, sec), (Integer) (first * sec));
     }
 }

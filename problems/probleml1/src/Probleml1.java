@@ -81,6 +81,23 @@ public class Probleml1 {
         }
     }
 
+    public Integer karatsubaMultiplication(Integer inputValueFist, Integer inputValueSec) {
+        if (inputValueFist < 10 || inputValueSec < 10) {
+            return inputValueFist * inputValueSec;
+        } else {
+            int base = 10;
+            int exp = Math.min((int) Math.log10(inputValueFist), (int) Math.log10(inputValueSec)),  // inpF = 56112, inpS = 126 -> exp = 2
+                    basePowExp = (int) Math.pow(base, exp),     // exp = 2 -> basePowExp = 10^2 = 100
+                    expBaseFirst = inputValueFist / basePowExp, // expBaseF = 561
+                    expBaseSec = inputValueSec / basePowExp,    // expBaseS = 1
+                    expResFirst = inputValueFist % basePowExp,  // expResF = 12
+                    expRestSec = inputValueSec % basePowExp;    // expResS = 26
+            int z2 = expBaseFirst * expBaseSec, // z2 = 561 * 1 = 561
+                    z0 = karatsubaMultiplication(expResFirst, expRestSec),    // z0 = 12 * 26 = 312  !! recursive
+                    z1 = karatsubaMultiplication(expBaseFirst + expResFirst, expBaseSec + expRestSec) -  z2 - z0; // z1 = 14598  !!recursive
+            return (int) (z2 * Math.pow(10, 2 * exp) + z1 * Math.pow(10, exp) + z0);    // return inpF * inpS = 7070112
+        }
+    }
 
 
 }
