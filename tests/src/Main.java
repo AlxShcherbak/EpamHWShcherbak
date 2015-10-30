@@ -21,7 +21,7 @@ public class Main {
 
         while (al > 0) {
             al = al >> 4;
-            iter ++;
+            iter++;
         }
 
         System.out.println(arrayB);

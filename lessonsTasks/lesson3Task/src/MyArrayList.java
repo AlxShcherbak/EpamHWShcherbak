@@ -51,7 +51,8 @@ public class MyArrayList<E> implements MyList<E>, Container<E>, RandomAccess {
     @Deprecated
     @Override
     public Container clone() {
-        return new MyArrayList<E>(array.clone());
+        return new MyArrayList<E>(array.clone()
+        );
     }
 
     @Override
@@ -146,7 +147,7 @@ public class MyArrayList<E> implements MyList<E>, Container<E>, RandomAccess {
 
     @Override
     public E[] toArray() {
-        return Arrays.copyOf(array,size());
+        return Arrays.copyOf(array, size());
     }
 
     @Override

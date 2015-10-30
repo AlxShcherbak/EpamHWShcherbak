@@ -1,11 +1,7 @@
-package classes;
-
-import static org.junit.Assert.*;
-
 /**
  * Created by AlxEx on 23.10.2015.
  */
-public class MyListTest {
+public class MyLinkedListSingleTest {
 
     @org.junit.Test
     public void testAdd() throws Exception {

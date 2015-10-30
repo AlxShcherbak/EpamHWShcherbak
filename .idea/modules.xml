@@ -4,10 +4,15 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/homeWorkShcherbak.iml" filepath="$PROJECT_DIR$/homeWorkShcherbak.iml" />
       <module fileurl="file://$PROJECT_DIR$/lessonsTasks/lesson1Task/lesson1Task.iml" filepath="$PROJECT_DIR$/lessonsTasks/lesson1Task/lesson1Task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson28102015/lesson28102015.iml" filepath="$PROJECT_DIR$/lesson28102015/lesson28102015.iml" />
       <module fileurl="file://$PROJECT_DIR$/lessonsTasks/lesson3Task/lesson3Task.iml" filepath="$PROJECT_DIR$/lessonsTasks/lesson3Task/lesson3Task.iml" />
       <module fileurl="file://$PROJECT_DIR$/lessonsTasks/lessonsTasks.iml" filepath="$PROJECT_DIR$/lessonsTasks/lessonsTasks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tasks1-3/task1OOP/mobile/mobile.iml" filepath="$PROJECT_DIR$/tasks1-3/task1OOP/mobile/mobile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tasks1-3/task1OOP/planes/planes.iml" filepath="$PROJECT_DIR$/tasks1-3/task1OOP/planes/planes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tasks1-3/task1OOP/planesEnumMore/planesEnumMore.iml" filepath="$PROJECT_DIR$/tasks1-3/task1OOP/planesEnumMore/planesEnumMore.iml" />
       <module fileurl="file://$PROJECT_DIR$/problems/probleml1/probleml1.iml" filepath="$PROJECT_DIR$/problems/probleml1/probleml1.iml" />
       <module fileurl="file://$PROJECT_DIR$/problems/probleml2/probleml2.iml" filepath="$PROJECT_DIR$/problems/probleml2/probleml2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/problems/probleml3/probleml3.iml" filepath="$PROJECT_DIR$/problems/probleml3/probleml3.iml" />
       <module fileurl="file://$PROJECT_DIR$/problems/problems.iml" filepath="$PROJECT_DIR$/problems/problems.iml" />
       <module fileurl="file://$PROJECT_DIR$/tasks1-3/task1OOP/task1OOP.iml" filepath="$PROJECT_DIR$/tasks1-3/task1OOP/task1OOP.iml" />
       <module fileurl="file://$PROJECT_DIR$/tasks1-3/task2String/task2String.iml" filepath="$PROJECT_DIR$/tasks1-3/task2String/task2String.iml" />

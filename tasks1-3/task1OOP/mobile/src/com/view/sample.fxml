@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="anchorMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controllers.Controller">
+   <children>
+      <MenuBar prefHeight="25.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem fx:id="menuItem_wachingTabs" mnemonicParsing="false" onAction="#watchingTabs" text="WATCH BASE" />
+              <MenuItem fx:id="menuItem_close" mnemonicParsing="false" onAction="#close" text="CLOSE" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+                  <MenuItem fx:id="menuItem_addNewTariff" mnemonicParsing="false" onAction="#menuAddNewTariff" text="ADD NEW TARIFF" />
+                  <MenuItem fx:id="menuItem_addNewClient" mnemonicParsing="false" onAction="#menuAddNewClient" text="ADD NEW CLIENT" />
+              <MenuItem fx:id="menuItem_addTestValues" mnemonicParsing="false" onAction="#menuAddTestValues" text="ADD TESTS VALUES" />
+                  <MenuItem fx:id="menuItem_clientStatisticByTariff" mnemonicParsing="false" onAction="#clientStatisticByTariff" text="CLIENT STATISTIC BY TARIFF" />
+                  <Menu fx:id="menuItem_actionDB" mnemonicParsing="false" text="ACTION WITH DB">
+                    <items>
+                      <MenuItem fx:id="menuItem_actionDBSortTariffByCost" mnemonicParsing="false" onAction="#actionDBSortTariffByCost" text="SORT TARIFFS BY COST" />
+                        <MenuItem fx:id="menuItem_actionSearchTariff" mnemonicParsing="false" onAction="#actionSearchTariff" text="SEARCH TARIFF BY PARAM" />
+                    </items>
+                  </Menu>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane fx:id="anchorAddTariffFirst" layoutX="10.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+         <children>
+            <Label layoutX="18.0" layoutY="61.0" text="Title" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="75.0">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textFieldAddNewTariffTitle" layoutX="122.0" layoutY="63.0" prefHeight="25.0" prefWidth="390.0" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="75.0" />
+            <Label layoutX="15.0" layoutY="101.0" text="Type" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="100.0">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="choiceBoxAddNewTariffType" layoutX="122.0" layoutY="103.0" prefHeight="25.0" prefWidth="190.0" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="275.0" AnchorPane.topAnchor="100.0" />
+            <TextArea fx:id="textAreaAddNewTariffDescription" layoutX="122.0" layoutY="136.0" prefHeight="175.0" prefWidth="390.0" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="125.0" />
+            <Label layoutX="15.0" layoutY="136.0" text="Description" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="150.0">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Button fx:id="buttonAddNewTariffNext" layoutX="462.0" layoutY="320.0" mnemonicParsing="false" onAction="#buttonAddNewTariffNext" prefHeight="25.0" prefWidth="75.0" text="NEXT" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="50.0" />
+            <Label alignment="CENTER" layoutX="177.0" layoutY="21.0" prefHeight="32.0" prefWidth="212.0" text="ADD NEW TARIFF" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorAddTariffSecond" layoutX="20.0" layoutY="20.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+         <children>
+            <Label layoutX="18.0" layoutY="61.0" text="LIcence fee for year" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="50.0">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="177.0" layoutY="21.0" prefHeight="32.0" prefWidth="212.0" text="ADD INFORMATION ABOUT TARIFF - COST" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="318.0" layoutY="150.0" text="Cost of 1Gb" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="300.0">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="255.0" layoutY="280.0" text="Cost of 1Mb " AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="275.0">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="346.0" layoutY="198.0" text="Cost of minute" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="225.0">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="193.0" layoutY="212.0" text="Cost of call" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="250.0">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="31.0" layoutY="196.0" text="Internet fee for day" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="175.0">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="18.0" layoutY="159.0" text="Internet fee for month" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="150.0">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="161.0" text="Internet fee for year" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="125.0">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="115.0" text="LIcence fee for day" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="100.0">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="18.0" layoutY="89.0" text="LIcence fee for month" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="75.0">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="20.0" layoutY="212.0" text="Cost of connection" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="200.0">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textFieldAddNewTariffLicFeeYear" layoutX="270.0" layoutY="52.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="50.0" />
+            <TextField fx:id="textFieldAddNewTariffLicFeeMonth" layoutX="280.0" layoutY="88.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="75.0" />
+            <TextField fx:id="textFieldAddNewTariffLicFeeDay" layoutX="313.0" layoutY="127.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="100.0" />
+            <TextField fx:id="textFieldAddNewTariffInternetFeeYear" layoutX="330.0" layoutY="163.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="125.0" />
+            <TextField fx:id="textFieldAddNewTariffInternetFeeMonth" layoutX="330.0" layoutY="191.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="150.0" />
+            <TextField fx:id="textFieldAddNewTariffInternetFeeDay" layoutX="405.0" layoutY="229.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="175.0" />
+            <TextField fx:id="textFieldAddNewTariffCostConnect" layoutX="226.0" layoutY="241.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="200.0" />
+            <TextField fx:id="textFieldAddNewTariffCostMinute" layoutX="280.0" layoutY="277.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="225.0" />
+            <TextField fx:id="textFieldAddNewTariffCostCall" layoutX="300.0" layoutY="297.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="250.0" />
+            <TextField fx:id="textFieldAddNewTariffCost1Mb" layoutX="310.0" layoutY="307.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="275.0" />
+            <TextField fx:id="textFieldAddNewTariffCost1Gb" layoutX="290.0" layoutY="287.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="300.0" />
+            <Button fx:id="buttonAddTariffApply" layoutX="461.0" layoutY="328.0" mnemonicParsing="false" onAction="#buttonAddTariffApply" prefHeight="25.0" prefWidth="109.0" text="APPLY" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="30.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorAddClient" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+         <children>
+            <Label alignment="CENTER" text="ADD NEW CLIENT" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label text="NAME" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="110.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label text="PHONE NUMBER" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="140.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label text="BALANCE" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="200.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label text="TARIFF PLAN" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="170.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textFieldAddNewClientName" prefHeight="25.0" prefWidth="305.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="110.0" />
+            <TextField fx:id="textFieldAddNewClientPhone" prefHeight="25.0" prefWidth="305.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="140.0" />
+            <ComboBox fx:id="comboBoxAddNewClientTariff" prefWidth="150.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="170.0" />
+            <TextField fx:id="textFieldAddNewClientBalance" prefHeight="25.0" prefWidth="305.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="200.0" />
+            <Button fx:id="buttonAddNewClientApply" mnemonicParsing="false" onAction="#addNewClientApply" prefHeight="25.0" prefWidth="75.0" text="APPLY" AnchorPane.bottomAnchor="115.0" AnchorPane.rightAnchor="100.0" />
+         </children>
+      </AnchorPane>
+      <TabPane fx:id="tabPane" layoutY="21.0" prefHeight="379.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+        <tabs>
+            <Tab onSelectionChanged="#watchTariff" text="WATCH TARIFF">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableViewTariff" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <columns>
+                              <TableColumn fx:id="tableColumnWatchTariffID" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="40.0" text="ID" />
+                              <TableColumn fx:id="tableColumnWatchTariffTitle" prefWidth="75.0" text="Title" />
+                              <TableColumn fx:id="tableColumnWatchTariffType" prefWidth="75.0" text="Type" />
+                              <TableColumn fx:id="tableColumnWatchTariffLicFee" prefWidth="180.0" text="Licence fee">
+                                 <columns>
+                                    <TableColumn fx:id="tableColumnWatchTariffLicFeeYear" prefWidth="40.0" text="Year" />
+                                    <TableColumn fx:id="tableColumnWatchTariffLicFeeMonth" prefWidth="50.0" text="Month" />
+                                    <TableColumn fx:id="tableColumnWatchTariffLicFeeDay" prefWidth="40.0" text="Day" />
+                                 </columns>
+                              </TableColumn>
+                              <TableColumn fx:id="tableColumnWatchTariffInternetFee" prefWidth="180.0" text="Internet fee">
+                                 <columns>
+                                    <TableColumn fx:id="tableColumnWatchTariffInternetFeeYear" prefWidth="40.0" text="Year" />
+                                    <TableColumn fx:id="tableColumnWatchTariffInternetFeeMonth" prefWidth="50.0" text="Month" />
+                                    <TableColumn fx:id="tableColumnWatchTariffInternetFeeDay" prefWidth="40.0" text="Day" />
+                                 </columns>
+                              </TableColumn>
+                              <TableColumn fx:id="tableColumnWatchTariffCost" prefWidth="75.0" text="Cost">
+                                 <columns>
+                                    <TableColumn fx:id="tableColumnWatchTariffCostConnect" prefWidth="75.0" text="Connection" />
+                                    <TableColumn fx:id="tableColumnWatchTariffCostCall" prefWidth="40.0" text="Call" />
+                                    <TableColumn fx:id="tableColumnWatchTariffCostMinute" prefWidth="50.0" text="Minute" />
+                                    <TableColumn fx:id="tableColumnWatchTariffCost1Mb" prefWidth="40.0" text="1Mb" />
+                                    <TableColumn fx:id="tableColumnWatchTariffCost1Gb" prefWidth="40.0" text="1Gb" />
+                                 </columns>
+                              </TableColumn>
+                              <TableColumn fx:id="tableColumnWatchTariffDescription" prefWidth="134.0" text="Description" />
+                           </columns>
+                        </TableView>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab onSelectionChanged="#watchClient" text="WATCH CLIENT">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableViewClient" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <columns>
+                              <TableColumn fx:id="tableColumnWatchClientID" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="40.0" text="ID" />
+                              <TableColumn fx:id="tableColumnWatchClientName" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="200.0" text="NAME" />
+                              <TableColumn fx:id="tableColumnWatchClientPhoneNum" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="150.0" text="PHONE NUMBER" />
+                              <TableColumn fx:id="tableColumnWatchClientTariff" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="120.0" text="TARIFF" />
+                              <TableColumn fx:id="tableColumnWatchClientBalance" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="75.0" text="BALANCE" />
+                           </columns>
+                        </TableView>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <ScrollPane fx:id="pane_searchTariff" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+         <content>
+            <AnchorPane fx:id="anchorSearchTariffByParam" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="840.0">
+               <children>
+                  <Label layoutX="22.0" layoutY="76.0" text="Licence fee for year" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="75.0">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="6.0" layoutY="14.0" prefHeight="32.0" prefWidth="212.0" text="SEARCH TARIFF BY PARAM" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="17.0" layoutY="373.0" text="Cost of 1Gb" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="375.0">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="343.0" text="Cost of 1Mb " AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="345.0">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="265.0" text="Cost of minute" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="285.0">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="313.0" text="Cost of call" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="315.0">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="215.0" text="Internet fee for day" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="225.0">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="190.0" text="Internet fee for month" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="195.0">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="165.0" text="Internet fee for year" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="165.0">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="140.0" text="Licence fee for day" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="135.0">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="115.0" text="Licence fee for month" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="105.0">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="240.0" text="Cost of connection" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="255.0">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="buttonSearch" layoutX="605.0" layoutY="421.0" mnemonicParsing="false" onAction="#buttonSearch" prefHeight="25.0" prefWidth="100.0" text="APPLY" AnchorPane.leftAnchor="625.0" AnchorPane.topAnchor="420.0" />
+                  <Label layoutX="283.0" layoutY="62.0" text="Down bound" AnchorPane.leftAnchor="275.0" AnchorPane.topAnchor="50.0">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="453.0" layoutY="50.0" text="Up bound" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="50.0">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="419.0" text="Type" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="420.0">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textFieldLicFeeYearDown" layoutX="250.0" layoutY="90.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="75.0" />
+                  <TextField fx:id="textFieldLicFeeYearUp" layoutX="418.0" layoutY="75.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="425.0" AnchorPane.topAnchor="75.0" />
+                  <TextField fx:id="textFieldLicFeeMonthDown" layoutX="425.0" layoutY="107.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="105.0" />
+                  <TextField fx:id="textFieldLicFeeMonthUP" layoutX="425.0" layoutY="107.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="425.0" AnchorPane.topAnchor="105.0" />
+                  <TextField fx:id="textFieldLicFeeDayDown" layoutX="250.0" layoutY="137.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="135.0" />
+                  <TextField fx:id="textFieldLicFeeDayUp" layoutX="425.0" layoutY="137.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="425.0" AnchorPane.topAnchor="135.0" />
+                  <TextField fx:id="textFieldInternetFeeYearDown" layoutX="250.0" layoutY="167.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="165.0" />
+                  <TextField fx:id="textFieldInternetFeeYearUp" layoutX="425.0" layoutY="167.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="425.0" AnchorPane.topAnchor="165.0" />
+                  <TextField fx:id="textFieldInternetFeeMonthDown" layoutX="250.0" layoutY="197.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="195.0" />
+                  <TextField fx:id="textFieldInternetFeeMonthUp" layoutX="425.0" layoutY="197.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="425.0" AnchorPane.topAnchor="195.0" />
+                  <TextField fx:id="textFieldInternetFeeDayDown" layoutX="250.0" layoutY="227.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="225.0" />
+                  <TextField fx:id="textFieldInternetFeeDayUp" layoutX="425.0" layoutY="227.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="425.0" AnchorPane.topAnchor="225.0" />
+                  <TextField fx:id="textFieldCostConnDown" layoutX="250.0" layoutY="257.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="255.0" />
+                  <TextField fx:id="textFieldCostConnUp" layoutX="425.0" layoutY="257.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="425.0" AnchorPane.topAnchor="255.0" />
+                  <TextField fx:id="textFieldCostMinuteDown" layoutX="250.0" layoutY="287.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="285.0" />
+                  <TextField fx:id="textFieldCostMinuteUp" layoutX="425.0" layoutY="287.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="425.0" AnchorPane.topAnchor="285.0" />
+                  <TextField fx:id="textFieldCostCallDown" layoutX="250.0" layoutY="317.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="315.0" />
+                  <TextField fx:id="textFieldCostCallUp" layoutX="425.0" layoutY="317.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="425.0" AnchorPane.topAnchor="315.0" />
+                  <TextField fx:id="textFieldCost1MbDown" layoutX="250.0" layoutY="350.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="345.0" />
+                  <TextField fx:id="textFieldCost1MbUp" layoutX="425.0" layoutY="350.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="425.0" AnchorPane.topAnchor="345.0" />
+                  <TextField fx:id="textFieldCost1GbDown" layoutX="250.0" layoutY="380.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="375.0" />
+                  <TextField fx:id="textFieldCost1GbUp" layoutX="431.0" layoutY="377.0" prefHeight="25.0" prefWidth="150.0" AnchorPane.leftAnchor="425.0" AnchorPane.topAnchor="375.0" />
+                  <ChoiceBox fx:id="choiceBoxTariffType" layoutX="250.0" layoutY="423.0" prefHeight="25.0" prefWidth="325.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="420.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <AnchorPane fx:id="watchTariffSearch" layoutX="10.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+         <children>
+            <TableView fx:id="tableViewTariffSearch" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="45.0">
+               <columns>
+                  <TableColumn fx:id="tableColumnSearchID" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="40.0" text="ID" />
+                  <TableColumn fx:id="tableColumnSearchTitle" prefWidth="75.0" text="Title" />
+                  <TableColumn fx:id="tableColumnSearchType" prefWidth="75.0" text="Type" />
+                  <TableColumn fx:id="tableColumnSearchLicFee" prefWidth="180.0" text="Licence fee">
+                     <columns>
+                        <TableColumn fx:id="tableColumnSearchLicFeeYear" prefWidth="40.0" text="Year" />
+                        <TableColumn fx:id="tableColumnSearchLicFeeMonth" prefWidth="50.0" text="Month" />
+                        <TableColumn fx:id="tableColumnSearchLicFeeDay" prefWidth="40.0" text="Day" />
+                     </columns>
+                  </TableColumn>
+                  <TableColumn fx:id="tableColumnSearchInternetFee" prefWidth="180.0" text="Internet fee">
+                     <columns>
+                        <TableColumn fx:id="tableColumnSearchInternetFeeYear" prefWidth="40.0" text="Year" />
+                        <TableColumn fx:id="tableColumnSearchInternetFeeMonth" prefWidth="50.0" text="Month" />
+                        <TableColumn fx:id="tableColumnSearchInternetFeeDay" prefWidth="40.0" text="Day" />
+                     </columns>
+                  </TableColumn>
+                  <TableColumn fx:id="tableColumnSearchCost" prefWidth="75.0" text="Cost">
+                     <columns>
+                        <TableColumn fx:id="tableColumnSearchCostConnect" prefWidth="75.0" text="Connection" />
+                        <TableColumn fx:id="tableColumnSearchCostCall" prefWidth="40.0" text="Call" />
+                        <TableColumn fx:id="tableColumnSearchCostMinute" prefWidth="50.0" text="Minute" />
+                        <TableColumn fx:id="tableColumnSearchCost1Mb" prefWidth="40.0" text="1Mb" />
+                        <TableColumn fx:id="tableColumnSearchCost1Gb" prefWidth="40.0" text="1Gb" />
+                     </columns>
+                  </TableColumn>
+                  <TableColumn fx:id="tableColumnSearchDescription" prefWidth="134.0" text="Description" />
+               </columns>
+            </TableView>
+            <Label alignment="CENTER" layoutX="459.0" layoutY="14.0" text="RESULT OF SEARCH" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <Button fx:id="searchButtonBack" layoutX="604.0" layoutY="415.0" mnemonicParsing="false" onAction="#searchButonBack" prefHeight="25.0" prefWidth="100.0" text="Back" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="100.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorStatistic" layoutY="25.0" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+         <children>
+            <Label alignment="CENTER" layoutX="229.0" layoutY="34.0" text="STATISTIC" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="50.0" layoutY="85.0" text="By tariff" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="85.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="statisticComboBoxTariff" layoutX="200.0" layoutY="85.0" prefWidth="150.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="85.0" />
+            <Button fx:id="buttonstatisticApply" layoutX="391.0" layoutY="85.0" mnemonicParsing="false" onAction="#showStatistic" prefHeight="25.0" prefWidth="125.0" text="Apply" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="85.0" />
+            <Separator layoutX="263.0" layoutY="219.0" prefWidth="200.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="150.0" />
+            <Label layoutX="42.0" layoutY="246.0" text="Number of clients" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="200.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="statisticNumberofClient" editable="false" layoutX="201.0" layoutY="250.0" AnchorPane.leftAnchor="200.0" AnchorPane.topAnchor="200.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
