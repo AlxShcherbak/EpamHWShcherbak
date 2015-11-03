@@ -53,11 +53,20 @@ public class Testo {
             System.out.println(plane + " : flueCons = " + plane.fuelConsuption());
         }
 
+        planesByFlueCons = airlines.searchPlanesByFlueConsuption(10,20);
+
+        System.out.println();
+        for (Plane plane : planesByFlueCons) {
+            System.out.println(plane + " : flueCons = " + plane.fuelConsuption());
+        }
+
         System.out.println();
         for (Plane plane : planeList) {
             System.out.println(plane);
         }
 
+        System.out.println();
+        System.out.println(airlines.getCapacity());
 
     }
 }

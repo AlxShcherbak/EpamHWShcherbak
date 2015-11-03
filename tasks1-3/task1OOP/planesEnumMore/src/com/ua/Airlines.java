@@ -49,10 +49,22 @@ public class Airlines {
     public List<Plane> searchPlanesByFlueConsuption(double minFlueCons, double maxFlueCons) {
         List<Plane> returnPlanesList = new ArrayList<>();
         for (Plane plane : planes) {
-            if (plane.fuelConsuption() >= minFlueCons && plane.fuelConsuption() <= maxFlueCons){
+            if (plane.fuelConsuption() >= minFlueCons && plane.fuelConsuption() <= maxFlueCons) {
                 returnPlanesList.add(plane);
             }
         }
         return returnPlanesList;
+    }
+
+
+    public String getCapacity() {
+        int passCap = 0;
+        double cargoCap = 0;
+        for (Plane plane : planes) {
+            passCap += plane.getPassengerCapacity();
+            cargoCap += plane.getCargoCapacity();
+        }
+        return "passenger capacity = " + passCap +
+                "\ncargo capacity = " + cargoCap;
     }
 }

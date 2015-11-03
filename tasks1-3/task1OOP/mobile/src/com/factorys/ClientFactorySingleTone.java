@@ -4,7 +4,7 @@ import com.classes.Client;
 import com.classes.Tariff;
 
 /**
- * Created by Alx Shcherbak on 27.05.2015.
+ * Created by Alx Shcherbak on 28.10.2015.
  */
 public class ClientFactorySingleTone {
     private int id = 0;

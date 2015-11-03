@@ -19,7 +19,7 @@ import java.util.ResourceBundle;
 /**
  * @author Alx Shcherbak
  * @see Initializable
- * @since 28.05.2015
+ * @since 27.10.2015
  */
 public class Controller implements Initializable {
     /**

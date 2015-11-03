@@ -1,7 +1,7 @@
 package com.classes;
 
 /**
- * Created by Alx Shcherbak on 01.06.2015.
+ * Created by Alx Shcherbak on 27.10.2015.
  */
 public class ValueInBound {
     Double downBound;

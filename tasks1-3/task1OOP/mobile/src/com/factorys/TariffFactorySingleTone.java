@@ -7,7 +7,7 @@ import com.classes.TariffType;
 import java.util.GregorianCalendar;
 
 /**
- * Created by Alx Shcherbak on 27.05.2015.
+ * Created by Alx Shcherbak on 28.10.2015.
  */
 public class TariffFactorySingleTone {
     private int id = 0;

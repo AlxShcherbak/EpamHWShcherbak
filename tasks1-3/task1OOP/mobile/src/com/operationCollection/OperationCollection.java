@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.GregorianCalendar;
 
 /**
- * Created by Alx Shcherbak on 27.05.2015.
+ * Created by Alx Shcherbak on 27.10.2015.
  */
 public class OperationCollection {
     /**

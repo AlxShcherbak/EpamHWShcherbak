@@ -5,7 +5,7 @@ import com.classes.ValueInBound;
 import javafx.scene.control.TextField;
 
 /**
- * Created by Alx Shcherbak on 02.06.2015.
+ * Created by Alx Shcherbak on 28.10.2015.
  */
 public class SubController {
     /**
