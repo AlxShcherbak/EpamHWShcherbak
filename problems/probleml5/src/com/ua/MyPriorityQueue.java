@@ -48,15 +48,15 @@ public class MyPriorityQueue<T extends Comparable> implements QueueInterface<T> 
                 queue[changeTop] = queue[change];
                 queue[change] = buff;
                 /**if (queue[changeTop * 2 + 1] != null && ((T) queue[changeTop]).compareTo(queue[changeTop * 2 + 1]) > 0) {
-                    buff = queue[changeTop];
-                    queue[changeTop] = queue[changeTop * 2 + 1];
-                    queue[changeTop * 2 + 1] = buff;
-                }
-                if (queue[changeTop * 2 + 2] != null && ((T) queue[changeTop]).compareTo(queue[changeTop * 2 + 2]) > 0) {
-                    buff = queue[changeTop];
-                    queue[changeTop] = queue[changeTop * 2 + 2];
-                    queue[changeTop * 2 + 2] = buff;
-                }*/
+                 buff = queue[changeTop];
+                 queue[changeTop] = queue[changeTop * 2 + 1];
+                 queue[changeTop * 2 + 1] = buff;
+                 }
+                 if (queue[changeTop * 2 + 2] != null && ((T) queue[changeTop]).compareTo(queue[changeTop * 2 + 2]) > 0) {
+                 buff = queue[changeTop];
+                 queue[changeTop] = queue[changeTop * 2 + 2];
+                 queue[changeTop * 2 + 2] = buff;
+                 }*/
                 change = changeTop;
                 changeTop = (change - 1) / 2;
             } else break;
