@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/homeWorkShcherbak.iml" filepath="$PROJECT_DIR$/homeWorkShcherbak.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson04112015/lesson04112015.iml" filepath="$PROJECT_DIR$/lesson04112015/lesson04112015.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson06112015/lesson06112015.iml" filepath="$PROJECT_DIR$/lesson06112015/lesson06112015.iml" />
       <module fileurl="file://$PROJECT_DIR$/lessonsTasks/lesson1Task/lesson1Task.iml" filepath="$PROJECT_DIR$/lessonsTasks/lesson1Task/lesson1Task.iml" />
       <module fileurl="file://$PROJECT_DIR$/lesson28102015/lesson28102015.iml" filepath="$PROJECT_DIR$/lesson28102015/lesson28102015.iml" />
       <module fileurl="file://$PROJECT_DIR$/lessonsTasks/lesson3Task/lesson3Task.iml" filepath="$PROJECT_DIR$/lessonsTasks/lesson3Task/lesson3Task.iml" />
@@ -14,6 +16,7 @@
       <module fileurl="file://$PROJECT_DIR$/problems/probleml2/probleml2.iml" filepath="$PROJECT_DIR$/problems/probleml2/probleml2.iml" />
       <module fileurl="file://$PROJECT_DIR$/problems/probleml3/probleml3.iml" filepath="$PROJECT_DIR$/problems/probleml3/probleml3.iml" />
       <module fileurl="file://$PROJECT_DIR$/problems/probleml5/probleml5.iml" filepath="$PROJECT_DIR$/problems/probleml5/probleml5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/problems/probleml6/probleml6.iml" filepath="$PROJECT_DIR$/problems/probleml6/probleml6.iml" />
       <module fileurl="file://$PROJECT_DIR$/problems/problems.iml" filepath="$PROJECT_DIR$/problems/problems.iml" />
       <module fileurl="file://$PROJECT_DIR$/tasks1-3/task1OOP/task1OOP.iml" filepath="$PROJECT_DIR$/tasks1-3/task1OOP/task1OOP.iml" />
       <module fileurl="file://$PROJECT_DIR$/tasks1-3/task2String/task2String.iml" filepath="$PROJECT_DIR$/tasks1-3/task2String/task2String.iml" />

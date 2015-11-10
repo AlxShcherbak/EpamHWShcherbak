@@ -69,9 +69,7 @@ public class MyPriorityQueue<T extends Comparable> implements QueueInterface<T> 
     public T poll() throws PriorityQueueIsEmptyException {
         Object returnObject;
         if (!this.isEmpty()) {
-            returnObject = queue[0];
-            System.arraycopy(queue, 1, queue, 0, --size);
-            queue[size] = null;
+            returnObject = remove((T) queue[0]);
         } else throw new PriorityQueueIsEmptyException();
         return (T) returnObject;
     }
@@ -84,6 +82,7 @@ public class MyPriorityQueue<T extends Comparable> implements QueueInterface<T> 
         } else throw new PriorityQueueIsEmptyException();
         return (T) returnObject;
     }
+
 
     @Override
     public int size() {

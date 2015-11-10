@@ -109,6 +109,24 @@ public class MyHashTable<K, V> {
     }
 
     @Nullable
+    public V get(K key) {
+        int position = getPosition(hash(key.hashCode()));
+        Entry<K, V> entry = hashTable[position];
+        if (entry != null) {
+            while (entry.hasNext()) {
+                if (entry.key.equals(key)) {
+                    return entry.value;
+                }
+                entry = entry.next;
+            }
+            if (entry.key.equals(key)) {
+                return entry.value;
+            }
+        }
+        return null;
+    }
+
+    @Nullable
     public V remove(Object key) {
         int position = getPosition(hash(key.hashCode()));
         Entry entry = hashTable[position];
@@ -163,11 +181,6 @@ public class MyHashTable<K, V> {
 
         boolean hasNext() {
             return next != null;
-        }
-
-        int hash(int h) {
-            h ^= (h >>> 20) ^ (h >>> 12);
-            return h ^ (h >>> 7) ^ (h >>> 4);
         }
     }
 }

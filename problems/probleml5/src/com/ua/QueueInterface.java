@@ -1,7 +1,5 @@
 package com.ua;
 
-import java.util.Queue;
-
 /**
  * Created by AlxEx on 03.11.2015.
  */
