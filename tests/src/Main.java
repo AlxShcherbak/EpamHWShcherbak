@@ -1,29 +1,25 @@
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * Created by AlxEx on 22.10.2015.
  */
 public class Main {
-    public static void main(String... args) {
-        Double[] arrayA = {0d, 1d, 200d, 500d};
-        Double[] arrayB = arrayA.clone();
-        Double[] arrayC = Arrays.copyOf(arrayA, 4);
+    static void some() throws Exception{
 
-
-        int[] array = {0, 1, 2, 3, 4, 5, 6};
-        int[] newArray = new int[10];
-
-
-        System.arraycopy(array, 4, array, 3, 3);
-
-        int al = 65,
-                iter = 0;
-
-        while (al > 0) {
-            al = al >> 4;
-            iter++;
+        try {
+            throw new Exception("k");
+        } finally {
+            throw new Exception("m");
         }
+    }
 
-        System.out.println(arrayB);
+    public static void main(String... args) {
+        Map<Integer, Integer> map = new TreeMap<>();
+        //System.out.print(map instanceof Collection);
+        try{
+            some();
+        } catch (Exception e){
+            System.out.print(e.getMessage());
+        }
     }
 }

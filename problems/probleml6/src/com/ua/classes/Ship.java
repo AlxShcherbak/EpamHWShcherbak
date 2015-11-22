@@ -11,6 +11,14 @@ public class Ship {
     private boolean killed;
     private int cellNumb;
 
+    public void setCells(Cell[] celles) {
+        for (Cell cell : celles) {
+            cells.add(cell);
+            cell.setShip();
+            cellNumb++;
+        }
+    }
+
     public boolean shot(Cell shotCell) {
         for (Cell cell : cells) {
             if (cell == shotCell) {

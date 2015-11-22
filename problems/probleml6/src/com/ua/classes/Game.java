@@ -9,7 +9,24 @@ public class Game {
     public void newGamePlayerVSPlayer() {
         players = new AbstractPlayer[]{new Player(), new Player()};
         players[0].createFields();
-        players[1].setFields(players[0].getOprtField(), players[0].getMyField());
+        players[1].createFields();
+        players[0].setFields(players[1].fields[0]);
+        players[1].setFields(players[0].fields[0]);
+
+        int switcher = 0;
+        while (!players[switcher].gameOver()) {
+            players[switcher].doMove();
+            switcher = this.moveSwitcher(switcher);
+        }
+    }
+
+    public void newGameCompVSComp() {
+        players = new AbstractPlayer[]{new Computer(), new Computer()};
+        players[0].createFields();
+        players[1].createFields();
+        players[0].setFields(players[1].fields[0]);
+        players[1].setFields(players[0].fields[0]);
+
 
         int switcher = 0;
         while (!players[switcher].gameOver()) {

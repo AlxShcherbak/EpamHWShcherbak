@@ -10,9 +10,8 @@ public abstract class AbstractPlayer {
     }
 
     public void createFields() {
-        for (Field field : fields) {
-            field = new Field();
-        }
+            fields[0] = new Field();
+            fields[0].testShips();
     }
 
     public Field getMyField() {
@@ -23,8 +22,7 @@ public abstract class AbstractPlayer {
         return fields[1];
     }
 
-    public void setFields(Field myField, Field oprField) {
-        fields[0] = myField;
+    public void setFields(Field oprField) {
         fields[1] = oprField;
     }
 

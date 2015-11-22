@@ -5,6 +5,7 @@ package com.ua.classes;
  */
 public class Cell {
     private boolean shoted;
+    private boolean shipOn;
 
     public Cell() {
     }
@@ -15,5 +16,13 @@ public class Cell {
 
     public boolean isShoted() {
         return shoted;
+    }
+
+    public boolean isShipOn() {
+        return shipOn;
+    }
+
+    public void setShip(){
+        shipOn = true;
     }
 }
